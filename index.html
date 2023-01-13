@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Defects</title>
+</head>
+<body>
+    <form method="post" action="/">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>Summary</th>
+            <th>Key</th>
+        </tr>
+        {% for defect in defects %}
+        <tr>
+            <td>{{defect.summary}}</td>
+            <td>{{defect.key}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
